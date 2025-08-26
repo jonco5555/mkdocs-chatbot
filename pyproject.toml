@@ -1,0 +1,19 @@
+[project]
+name = "mkdocs-chatbot"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Yonatan Cohen", email = "jonco5555@gmail.com" }
+]
+requires-python = ">=3.8"
+dependencies = [
+    "mkdocs>=1.6.1",
+]
+
+[project.scripts]
+mkdocs-chatbot = "mkdocs_chatbot:main"
+
+[build-system]
+requires = ["uv_build>=0.8.11,<0.9.0"]
+build-backend = "uv_build"
