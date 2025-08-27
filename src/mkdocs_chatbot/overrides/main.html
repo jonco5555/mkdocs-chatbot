@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block footer %}
+  {{ super() }}
+  <div class="bot-container">
+    <a class="twemoji bot-button" href="javascript:void(0)" title="Ask bot about the docs">
+      {% include ".icons/fontawesome/solid/robot.svg" %}
+    </a>
+    <iframe src=""></iframe>
+  </div>
+  <script>
+    // Extract project name from URL
+    const isLocalHost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    const pathParts = window.location.pathname.split('/').filter(Boolean);
+    const projectName = isLocalHost ? 'default' : (pathParts[0] || 'default')
+    iFrame.src = "{{ chatbot_url }}" + "?project=" + encodeURIComponent(projectName);
+
+    const botButton = document.querySelector('.bot-button');
+    const iFrame = document.querySelector('.bot-container > iframe');
+    const hideBot = () => {
+      iFrame.style.height = null;
+      botButton.style.display = 'block';
+      document.removeEventListener('click', hideBot);
+    }
+    botButton.addEventListener('click', (e) => {
+      const curHeight = window.getComputedStyle(iFrame).height;
+      const header = document.querySelector('.md-header');
+      const height = `calc(100vh - ${header.clientHeight + 120}px)`;
+      if (curHeight === '0px') {
+        iFrame.style.height = height;
+        botButton.style.display = 'none';
+        document.addEventListener('click', hideBot);
+      } else {
+        hideBot();
+      }
+      e.stopPropagation();
+    });
+    iFrame.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+    window.addEventListener('resize', (e) => {
+      if (iFrame.style.height) {
+        const header = document.querySelector('.md-header');
+        const height = `calc(100vh - ${header.clientHeight + 120}px)`;
+        iFrame.style.height = height;
+      }
+      e.stopPropagation();
+    })
+  </script>
+{% endblock %}

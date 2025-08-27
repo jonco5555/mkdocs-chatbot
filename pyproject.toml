@@ -1,0 +1,27 @@
+[project]
+name = "mkdocs-chatbot"
+dynamic = ["version"]
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Yonatan Cohen", email = "jonco5555@gmail.com" }
+]
+requires-python = ">=3.8"
+dependencies = [
+    "mkdocs>=1.6.1",
+]
+
+[project.scripts]
+mkdocs-chatbot = "mkdocs_chatbot:main"
+
+[build-system]
+requires = ["hatchling", "uv-dynamic-versioning"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+source = "uv-dynamic-versioning"
+
+[tool.uv-dynamic-versioning]
+vcs = "git"
+style = "pep440"
+bump = true
