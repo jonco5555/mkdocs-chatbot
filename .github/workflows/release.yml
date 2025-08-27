@@ -8,7 +8,9 @@ jobs:
   build-and-publish:
     runs-on: ubuntu-latest
     environment:
-        name: release
+      name: pypi
+    permissions:
+      id-token: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -28,6 +30,5 @@ jobs:
         run: |
           uv build
 
-      - name: Publish to PyPI
-        run: |
-          uv upload dist/*
+      - name: Publish package distributions to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
