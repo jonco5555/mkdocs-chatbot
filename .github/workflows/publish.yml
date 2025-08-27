@@ -1,14 +1,14 @@
-name: CI
+name: Publish Python Package
 
 on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+  release:
+    types: [published]
 
 jobs:
-  build:
+  build-and-publish:
     runs-on: ubuntu-latest
+    environment:
+        name: release
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -18,13 +18,16 @@ jobs:
         with:
           python-version-file: ".python-version"
 
-      - uses: pre-commit/action@v3.0.0
-
       - name: Setup uv
         uses: astral-sh/setup-uv@v1
         with:
           enable-cache: true
           version: "0.8.11"
 
-      - name: Build the project
-        run: uv build
+      - name: Build package
+        run: |
+          uv build
+
+      - name: Publish to PyPI
+        run: |
+          uv upload dist/*
