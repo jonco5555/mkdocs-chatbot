@@ -11,8 +11,8 @@ dependencies = [
     "mkdocs>=1.6.1",
 ]
 
-[project.scripts]
-mkdocs-chatbot = "mkdocs_chatbot:main"
+[project.entry-points."mkdocs.plugins"]
+"chatbot" = "mkdocs_chatbot.plugin:ChatbotPlugin"
 
 [build-system]
 requires = ["hatchling", "uv-dynamic-versioning"]
@@ -25,3 +25,11 @@ source = "uv-dynamic-versioning"
 vcs = "git"
 style = "pep440"
 bump = true
+
+[dependency-groups]
+docs = [
+    "markdown-exec>=1.9.3",
+    "mkdocs>=1.6.1",
+    "mkdocs-awesome-pages-plugin>=2.9.2",
+    "mkdocs-material>=9.6.18",
+]

@@ -1,0 +1,64 @@
+site_name: MkDocs Chatbot
+repo_url: https://github.com/jonco5555/mkdocs-chatbot
+nav:
+  - Home: index.md
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+          icon: material/toggle-switch-off-outline
+          name: Switch to dark mode
+      primary: light blue
+      accent: light blue
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+          icon: material/toggle-switch
+          name: Switch to light mode
+      primary: light blue
+      accent: light blue
+  font:
+    text: Roboto
+    code: Roboto Mono
+  logo: assets/head.png
+  favicon: assets/head.png
+  features:
+    - navigation.tabs
+    - navigation.top
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - search.highlight
+    - search.suggest
+    - toc.integrate
+    - content.code.copy
+plugins:
+  - search
+  - awesome-pages
+  - markdown-exec
+  - chatbot:
+      url: "http://localhost:8501"
+markdown_extensions:
+  - admonition
+  - codehilite
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+  - pymdownx.highlight:
+      linenums: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.details
+  - pymdownx.snippets:
+      restrict_base_path: false
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/jonco5555/mkdocs-chatbot

@@ -28,3 +28,7 @@ jobs:
 
       - name: Build the project
         run: uv build
+
+      - name: Build docs
+        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+        run: uv run --group docs mkdocs gh-deploy --force

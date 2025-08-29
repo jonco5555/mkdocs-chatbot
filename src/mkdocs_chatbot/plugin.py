@@ -25,7 +25,7 @@ class ChatbotPlugin(BasePlugin[ChatbotConfig]):
         self, env: Environment, /, *, config: MkDocsConfig, files: Files
     ) -> Environment:
         # Add custom CSS to the site
-        css_filename = "assets/chatbot.css"
+        css_filename = "assets/extra.css"
         css_content = Path(__file__).resolve().parent.joinpath(css_filename).read_text()
         write_file(css_content.encode(), os.path.join(config.site_dir, css_filename))
         config.extra_css.insert(0, css_filename)
