@@ -26,6 +26,11 @@ vcs = "git"
 style = "pep440"
 bump = true
 
+[tool.uv.workspace]
+members = [
+    "app",
+]
+
 [dependency-groups]
 docs = [
     "markdown-exec>=1.9.3",
