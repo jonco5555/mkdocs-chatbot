@@ -1,7 +1,7 @@
 [project]
 name = "app"
 version = "0.1.0"
-description = "Add your description here"
+description = "A Streamlit-based chatbot application that provides an interactive AI-powered interface to chat with the mkdocs-chatbot plugin documentation."
 readme = "README.md"
 requires-python = ">=3.12, <4.0"
 dependencies = [
