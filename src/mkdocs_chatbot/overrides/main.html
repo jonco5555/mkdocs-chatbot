@@ -13,7 +13,9 @@
     const isLocalHost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
     const pathParts = window.location.pathname.split('/').filter(Boolean);
     const projectName = isLocalHost ? 'default' : (pathParts[0] || 'default')
-    document.getElementById('chatbot').src = "{{ chatbot_url }}" + "?project=" + encodeURIComponent(projectName);
+    const chatbotUrl = "{{ chatbot_url }}";
+    const separator = chatbotUrl.includes('?') ? '&' : '?';
+    document.getElementById('chatbot').src = chatbotUrl + separator + "project=" + encodeURIComponent(projectName);
 
     const botButton = document.querySelector('.bot-button');
     const iFrame = document.querySelector('.bot-container > iframe');
