@@ -26,7 +26,15 @@ vcs = "git"
 style = "pep440"
 bump = true
 
+[tool.uv.workspace]
+members = [
+    "app",
+]
+
 [dependency-groups]
+dev = [
+    "pre-commit>=4.5.1",
+]
 docs = [
     "markdown-exec>=1.9.3",
     "mkdocs>=1.6.1",

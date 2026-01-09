@@ -2,7 +2,7 @@
 
 <div align="center">
 <br>
-<img src="assets/logo.png" alt="PDM logo" width="250">
+<img src="assets/logo.png" alt="mkdocs-chatbot logo" width="250">
 </div>
 
 ## Overview
@@ -24,7 +24,7 @@ Install the plugin:
 === "pip"
 
     ```bash
-    pip install your-package
+    pip install mkdocs-chatbot
     ```
 
 Add the plugin to your `mkdocs.yaml` configuration:
@@ -33,3 +33,12 @@ plugins:
     - chatbot:
         url: <your_chat_url>
 ```
+
+## Quick Start
+
+The plugin requires a **backend chat application** to function. The plugin itself only provides the frontend interface (chatbot button and iframe). You need to:
+
+1. Set up a backend chat service that embeds your documentation and connects to an LLM
+2. Configure the `url` parameter to point to your backend service
+
+For detailed information on backend requirements, setup instructions, and how to interface with the plugin, see the [Backend Setup Guide](backend_setup.md).
