@@ -41,7 +41,7 @@ plugins:
   - awesome-pages
   - markdown-exec
   - chatbot:
-      url: "<TBD>"
+      url: https://mkdocs-chatbot.streamlit.app/?embed=true
 markdown_extensions:
   - admonition
   - codehilite
