@@ -1,7 +1,7 @@
 [project]
 name = "mkdocs-chatbot"
 dynamic = ["version"]
-description = "Add your description here"
+description = "A MKDocs plugin that adds an AI-powered chatbot to your documentation."
 readme = "README.md"
 authors = [
     { name = "Yonatan Cohen", email = "jonco5555@gmail.com" }
@@ -10,6 +10,10 @@ requires-python = ">=3.8"
 dependencies = [
     "mkdocs>=1.6.1",
 ]
+
+[project.urls]
+Repository = "https://github.com/jonco5555/mkdocs-chatbot"
+Documentation = "https://jonco5555.github.io/mkdocs-chatbot/"
 
 [project.entry-points."mkdocs.plugins"]
 "chatbot" = "mkdocs_chatbot.plugin:ChatbotPlugin"
