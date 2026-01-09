@@ -10,7 +10,8 @@ jobs:
     environment:
       name: pypi
     permissions:
-      id-token: write
+      id-token: write  # Required for PyPI Trusted Publishing
+      contents: write  # Required for mkdocs to deploy to gh-pages
     steps:
       - name: Checkout code
         uses: actions/checkout@v4

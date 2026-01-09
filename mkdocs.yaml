@@ -2,6 +2,8 @@ site_name: MkDocs Chatbot
 repo_url: https://github.com/jonco5555/mkdocs-chatbot
 nav:
   - Home: index.md
+  - Backend Setup: backend_setup.md
+  - Example: example.md
 theme:
   name: material
   palette:
@@ -27,8 +29,9 @@ theme:
   features:
     - navigation.tabs
     - navigation.top
-    - navigation.tabs
     - navigation.tabs.sticky
+    - navigation.footer
+    - navigation.expand
     - search.highlight
     - search.suggest
     - toc.integrate
@@ -38,7 +41,7 @@ plugins:
   - awesome-pages
   - markdown-exec
   - chatbot:
-      url: "http://localhost:8501"
+      url: "<TBD>"
 markdown_extensions:
   - admonition
   - codehilite
