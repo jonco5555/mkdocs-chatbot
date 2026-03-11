@@ -5,10 +5,10 @@ description = "A Streamlit-based chatbot application that provides an interactiv
 readme = "README.md"
 requires-python = ">=3.12, <4.0"
 dependencies = [
-    "llama-index>=0.13.3",
-    "llama-index-embeddings-google-genai>=0.3.1",
-    "llama-index-llms-google-genai>=0.3.1",
-    "streamlit>=1.49.1",
+    "llama-index==0.14.14",
+    "llama-index-embeddings-google-genai==0.3.2",
+    "llama-index-llms-google-genai==0.8.7",
+    "streamlit==1.54.0",
 ]
 
 [tool.poetry]
