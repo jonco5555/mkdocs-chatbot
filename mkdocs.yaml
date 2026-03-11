@@ -41,7 +41,7 @@ plugins:
   - awesome-pages
   - markdown-exec
   - chatbot:
-      url: https://mkdocs-chatbot.streamlit.app/?embed=true
+      url: https://mkdocs-chatbot-903213368620.europe-west1.run.app/?embed=true
 markdown_extensions:
   - admonition
   - codehilite
